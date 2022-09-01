@@ -1,0 +1,21 @@
+.main-index{
+    .row {
+        justify-content: space-evenly;
+        width: 100%;
+        padding-top: 25px;
+        .card {
+            background-color: bisque;
+            margin: 20px;
+            height: 38vh;
+            .esp {
+                font-size: 20px;
+            }
+            .espp {
+                font-size: 15px;
+            }
+            .card-img-top {
+                padding-top: 10px;
+            }
+        }
+    }
+}

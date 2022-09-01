@@ -1,0 +1,43 @@
+.header .navbar {
+  padding: 1rem;
+  background-color: rgba(245, 225, 200, 0.836); }
+  .header .navbar .logo {
+    width: 90px; }
+  .header .navbar .collapse {
+    flex-direction: row-reverse;
+    font-size: large;
+    font-weight: bold; }
+
+.main-index .row {
+  justify-content: space-evenly;
+  width: 100%;
+  padding-top: 25px; }
+  .main-index .row .card {
+    background-color: bisque;
+    margin: 20px;
+    height: 38vh; }
+    .main-index .row .card .esp {
+      font-size: 20px; }
+    .main-index .row .card .espp {
+      font-size: 15px; }
+    .main-index .row .card .card-img-top {
+      padding-top: 10px; }
+
+.footer-style {
+  padding-top: 5px;
+  background-color: rgba(214, 170, 116, 0.815);
+  margin-top: 25px; }
+  .footer-style .text {
+    padding-top: 10px; }
+    .footer-style .text .footer-col {
+      margin-bottom: 10px; }
+      .footer-style .text .footer-col h3 {
+        margin-bottom: 10px;
+        font-weight: 800; }
+      .footer-style .text .footer-col .foot {
+        display: flex;
+        justify-content: center; }
+        .footer-style .text .footer-col .foot .instagram {
+          width: 20px;
+          height: 20px;
+          margin-right: 5px; }

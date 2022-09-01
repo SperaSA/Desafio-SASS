@@ -1,0 +1,16 @@
+.header {
+    .navbar {
+        padding: 1rem;
+        background-color: rgba(245, 225, 200, 0.836);
+        .logo {
+            width: 90px;
+        }
+
+        .collapse {
+            flex-direction: row-reverse;
+            font-size: large;
+            font-weight: bold;
+        }
+
+    }
+}

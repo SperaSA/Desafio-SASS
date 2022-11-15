@@ -1,104 +1,110 @@
-const comprar = () =>{
+const CART = [];
+let total = 0;
 
-console.log("Bienvenidos a la tienda Oficial de HiHome Deco");
-alert("Bienvenidos a la tienda Oficial de HiHome Deco");
+console.log('Cart:',CART)
 
-var nombreUsuario = prompt("¿Posee usuario y contraseña?");
-if((nombreUsuario=="si")||(nombreUsuario=="Si")||(nombreUsuario=="sI")){
-    var usuario = prompt("Indique su usuario");
-    var contraseña = prompt("Indique su contraseña");
+function newUserOn() { 
+
+let newUser = prompt('Hola, ingrese su nuevo usuario')
+
+if((newUser == '') || (newUser == ' ')) {
+
+    console.log('Debe ingresar un usuario para poder continuar')
+
 }else{
-    alert("Favor cree un usuario antes de continuar");
-    var usuario = prompt("Indique su usuario");
-    var contraseña = prompt("Indique su contraseña");
+
+    alert(`Bienvenido a MiHomeDeco ${newUser}`)
+
+}}
+
+newUserOn();
+
+class Product {
+
+    constructor(id, name, price, stock){
+        
+        this.id = id
+        this.name = name
+        this.price = price
+        this.stock = stock
+    
+    }
+
 }
 
-console.log("Bienvenido " + usuario + ", ya puedes comenzar a comprar");
-alert("Bienvenido " + usuario + ", ya puedes comenzar a comprar");
+const product1 = new Product (1,'Especieros corcho', 200, 20)
+const product2 = new Product (2,'Dispenser', 300, 30)
+const product3 = new Product (3,'Impresiones', 'solicite cotizacion', 0);
+const product4 = new Product (4,'Aromatizadores', 300, 15);
+const product5 = new Product (3,'Especieros rosca', 240, 35);
+const product6 = new Product (4,'Macrame', "solicite cotizacion", 0);
 
+const PRODUCTS = [product1,product2,product3,product4,product5,product6];
+ 
+console.log(PRODUCTS)
 
-do{
-    
-    var pedido = prompt("Favor indique el producto deseado, basandose en los numeros o nombre que figuran al principio de cada item")
-    cantidad = Number(prompt("Indique la cantidad del producto")); 
+PRODUCTS.forEach((prod) => alert(`Los productos de MiHomeDeco son: ${prod.name}`))
 
-    if((pedido==1)||(pedido=="Especieros")||(pedido=="ESPECIEROS")||(pedido=="especieros")){
-    
-    Especieros = 200;
-    ESPECIEROS = 200;
-    especieros = 200;
-    console.log("Usted a seleccionado " + cantidad + " unidades de " + pedido + ": Sumando un total de $" + (especieros*cantidad));
+let condition = 1;
 
-    }if(cantidad<20){
+while(condition == 1){ 
 
-    }else{
-        alert("No hay Stock sobre la cantidad deseada")
-    }
+let userBuy = parseInt(prompt('Que producto desea comprar?  1- Especieros corcho $200 2- Dispenser $300 3-Impresiones 4-Aromatizadores $300 5-Especieros rosca $240 6-Macrame'))
 
-    if((pedido==2)||(pedido=="Dispenser")||(pedido=="DISPENSER")||(pedido=="dispenser")){
-    
-        Dispenser = 300;
-        DISPENSER = 300;
-        dispenser = 300;
-        console.log("Usted a seleccionado " + cantidad + " unidades de " + pedido + ": Sumando un total de $" + (dispenser*cantidad));
-    
-    }if(cantidad<30){
+switch(userBuy){
 
-    }else{
-        alert("No hay Stock sobre la cantidad deseada")
-    }
+    case 1:
+        if(product1.stock > 0 ){
 
-    if((pedido==3)||(pedido=="Impresiones")||(pedido=="IMPRESIONES")||(pedido=="impresiones")){
-    
+            CART.push(product1);
+            total += product1.price
+            product1.stock -= 1;
+            alert(`Compraste ${product1.name} quedó ${product1.stock} de stock`)
+
+        }
+        else{
+            alert("No hay stock")
+        }
+
+        break;
+    case 2:
+        if(product2.stock > 0 ){
+
+            CART.push(product2);
+            total += product2.price
+            product2.stock -= 1;
+            alert(`Compraste ${product2.name} quedó ${product2.stock} de stock`)
+        }
+        else{
+            alert("No hay stock")
+        }
+        break;
+    case 3:
         idea = prompt("Favor indiquenos su idea, medidas exactas e informacion sobre el producto que desea")
         console.log("Usted ha solicitado una cotizacion sobre " + idea + ". Favor aguarde, y a la brevedad nos estaremos contactando");
-    
-    }if(cantidad<100){
+        break;
 
-    }else{
-        alert("No hay Stock sobre la cantidad deseada")
+    case 4:
+        if(product4.stock > 0 ){
+
+            CART.push(product4);
+            total += product4.price
+            product4.stock -= 1;
+            alert(`Compraste ${product4.name} quedó ${product4.stock} de stock`)
+        }
+        else{
+            alert("No hay stock")
+        }
+        break;
     }
 
-    if((pedido==4)||(pedido=="Aromatizadores")||(pedido=="AROMATIZADORES")||(pedido=="aromatizadores")){
-    
-        Aromatizadores = 300;
-        AROMATIZADORES = 300;
-        aromatizadores = 300;
-        console.log("Usted a seleccionado " + cantidad + " unidades de " + pedido + ": Sumando un total de $" + (aromatizadores*cantidad));
-    
-        }if(cantidad<15){
-    
-        }else{
-            alert("No hay Stock sobre la cantidad deseada")
-        }
 
-        if((pedido==5)||(pedido=="Especieros a rosca")||(pedido=="ESPECIEROS A ROSCA")||(pedido=="especieros a rosca")){
-    
-            EspecierosR = 240;
-            ESPECIEROSR = 240;
-            especierosR = 240;
-            console.log("Usted a seleccionado " + cantidad + " unidades de " + pedido + ": Sumando un total de $" + (especierosR*cantidad));
-        
-            }if(cantidad<35){
-        
-            }else{
-                alert("No hay Stock sobre la cantidad deseada")
-            }
-              
-        if((pedido==6)||(pedido=="Macrame")||(pedido=="MACRAME")||(pedido=="macrame")){
-    
-            idea = prompt("Favor indiquenos su idea, medidas exactas e informacion sobre el producto que desea")
-            console.log("Usted ha solicitado una cotizacion sobre " + idea + ". Favor aguarde, y a la brevedad nos estaremos contactando");
-    
-        }if(cantidad<100){
+    condition = prompt('Desea seguir comprando? 1- Si 2- No')
 
-        }else{
-            alert("No hay Stock sobre la cantidad deseada")
-        }
+    if(condition!=1){
+    alert(`Tu compra ha sido realizada, el total del monto es: $${CART.map(el => el.price).reduce(
+        (previousValue, currentValue) => previousValue + currentValue, 0)}`)
     
-
-    var continuar = prompt("¿Desea seguir comprando?")
-
-}while((continuar=="Si")||(continuar=="SI")||(continuar=="si"))
-
+    }
 }
+
